@@ -8,6 +8,26 @@
     {
       "port": 8080,
       "listen": "0.0.0.0",
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "45f1a2b3-4c5d-4e6f-9a10-1b2c3d4e5666"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/MrValdez/Vless"
+        }
+      }
+    },
+
+    {
+      "port": 8081,
+      "listen": "0.0.0.0",
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -26,7 +46,7 @@
     },
 
     {
-      "port": 8080,
+      "port": 8082,
       "listen": "0.0.0.0",
       "protocol": "shadowsocks",
       "settings": {
