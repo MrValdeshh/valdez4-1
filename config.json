@@ -28,6 +28,45 @@
     {
       "port": 8080,
       "listen": "0.0.0.0",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "69f3a7b2-6d44-4e91-8a3f-2b7e5d9c1f69",
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/MrValdez/Vmess"
+        }
+      }
+    },
+
+    {
+      "port": 8080,
+      "listen": "0.0.0.0",
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "MrValdez"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/MrValdez/Trojan"
+        }
+      }
+    },
+
+    {
+      "port": 8080,
+      "listen": "0.0.0.0",
       "protocol": "shadowsocks",
       "settings": {
         "method": "aes-256-gcm",
