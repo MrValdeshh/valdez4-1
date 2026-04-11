@@ -4,4 +4,4 @@ ENV PORT=8080
 
 COPY config.json /etc/v2ray/config.json
 
-CMD ["v2ray", "run", "-config", "/etc/v2ray/config.json"]
+CMD ["xray", "-config", "/etc/v2ray/config.json"]
