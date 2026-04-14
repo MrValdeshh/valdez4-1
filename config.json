@@ -47,7 +47,7 @@
     },
     {
       "listen": "0.0.0.0",
-      "port": 8082,
+      "port": 8080,
       "protocol": "vmess",
       "tag": "vmess-ws",
       "settings": {
@@ -87,7 +87,7 @@
     },
     {
       "listen": "0.0.0.0",
-      "port": 8084,
+      "port": 8080,
       "protocol": "trojan",
       "tag": "trojan-ws",
       "settings": {
@@ -125,7 +125,7 @@
     },
     {
       "listen": "0.0.0.0",
-      "port": 8086,
+      "port": 8080,
       "protocol": "shadowsocks",
       "tag": "ss-ws",
       "settings": {
