@@ -2,20 +2,94 @@
   "log": {
     "loglevel": "warning"
   },
-
   "inbounds": [
-
     {
-      "port": 8080,
       "listen": "0.0.0.0",
-      "protocol": "http",
-      "settings": {}
+      "port": 8080,
+      "protocol": "vless",
+      "tag": "vless-ws",
+      "settings": {
+        "clients": [
+          {
+            "id": "69f3a7b2-6d44-4e91-8a3f-2b7e5d9c1f69",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/MrValdez/Vless-ws"
+        }
+      }
     },
-
     {
-      "port": 8080,
       "listen": "0.0.0.0",
+      "port": 8081,
+      "protocol": "vless",
+      "tag": "vless-hu",
+      "settings": {
+        "clients": [
+          {
+            "id": "69f3a7b2-6d44-4e91-8a3f-2b7e5d9c1f69",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "httpupgrade",
+        "httpupgradeSettings": {
+          "path": "/MrValdez/Vless-hu"
+        }
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 8082,
+      "protocol": "vmess",
+      "tag": "vmess-ws",
+      "settings": {
+        "clients": [
+          {
+            "id": "69f3a7b2-6d44-4e91-8a3f-2b7e5d9c1f69",
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/MrValdez/Vmess-ws"
+        }
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 8083,
+      "protocol": "vmess",
+      "tag": "vmess-hu",
+      "settings": {
+        "clients": [
+          {
+            "id": "69f3a7b2-6d44-4e91-8a3f-2b7e5d9c1f69",
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "httpupgrade",
+        "httpupgradeSettings": {
+          "path": "/MrValdez/Vmess-hu"
+        }
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 8084,
       "protocol": "trojan",
+      "tag": "trojan-ws",
       "settings": {
         "clients": [
           {
@@ -26,33 +100,72 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/MrValdez"
+          "path": "/MrValdez/Trojan-ws"
         }
       }
     },
-
     {
-      "port": 8080,
       "listen": "0.0.0.0",
+      "port": 8085,
+      "protocol": "trojan",
+      "tag": "trojan-hu",
+      "settings": {
+        "clients": [
+          {
+            "password": "MrValdez"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "httpupgrade",
+        "httpupgradeSettings": {
+          "path": "/MrValdez/Trojan-hu"
+        }
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 8086,
       "protocol": "shadowsocks",
+      "tag": "ss-ws",
       "settings": {
         "method": "aes-256-gcm",
-        "password": "MrValdez",
-        "network": "tcp"
+        "password": "MrValdez123",
+        "network": "tcp,udp"
       },
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/MrValdez"
+          "path": "/MrValdez/Shadowsocks-ws"
+        }
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 8087,
+      "protocol": "shadowsocks",
+      "tag": "ss-hu",
+      "settings": {
+        "method": "aes-256-gcm",
+        "password": "MrValdez123",
+        "network": "tcp,udp"
+      },
+      "streamSettings": {
+        "network": "httpupgrade",
+        "httpupgradeSettings": {
+          "path": "/MrValdez/Shadowsocks-hu"
         }
       }
     }
-
   ],
-
   "outbounds": [
     {
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
     }
   ]
 }
