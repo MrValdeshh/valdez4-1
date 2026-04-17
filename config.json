@@ -2,6 +2,16 @@
   "log": {
     "loglevel": "warning"
   },
+  "policy": {
+    "levels": {
+      "0": {
+        "handshake": 4,
+        "connIdle": 300,
+        "uplinkOnly": 1,
+        "downlinkOnly": 1
+      }
+    }
+  },
   "inbounds": [
     {
       "listen": "0.0.0.0",
@@ -11,11 +21,14 @@
       "settings": {
         "clients": [
           {
-            "id": "69f3a7b2-6d44-4e91-8a3f-2b7e5d9c1f69",
-            "level": 0
+            "id": "69f3a7b2-6d44-4e91-8a3f-2b7e5d9c1f69"
           }
         ],
         "decryption": "none"
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
       },
       "streamSettings": {
         "network": "ws",
@@ -32,11 +45,14 @@
       "settings": {
         "clients": [
           {
-            "id": "69f3a7b2-6d44-4e91-8a3f-2b7e5d9c1f69",
-            "level": 0
+            "id": "69f3a7b2-6d44-4e91-8a3f-2b7e5d9c1f69"
           }
         ],
         "decryption": "none"
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
       },
       "streamSettings": {
         "network": "httpupgrade",
@@ -47,7 +63,7 @@
     },
     {
       "listen": "0.0.0.0",
-      "port": 8080,
+      "port": 8082,
       "protocol": "vmess",
       "tag": "vmess-ws",
       "settings": {
@@ -57,6 +73,10 @@
             "alterId": 0
           }
         ]
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
       },
       "streamSettings": {
         "network": "ws",
@@ -78,6 +98,10 @@
           }
         ]
       },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      },
       "streamSettings": {
         "network": "httpupgrade",
         "httpupgradeSettings": {
@@ -87,7 +111,7 @@
     },
     {
       "listen": "0.0.0.0",
-      "port": 8080,
+      "port": 8084,
       "protocol": "trojan",
       "tag": "trojan-ws",
       "settings": {
@@ -96,6 +120,10 @@
             "password": "MrValdez"
           }
         ]
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
       },
       "streamSettings": {
         "network": "ws",
@@ -116,6 +144,10 @@
           }
         ]
       },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      },
       "streamSettings": {
         "network": "httpupgrade",
         "httpupgradeSettings": {
@@ -125,13 +157,17 @@
     },
     {
       "listen": "0.0.0.0",
-      "port": 8080,
+      "port": 8086,
       "protocol": "shadowsocks",
       "tag": "ss-ws",
       "settings": {
         "method": "aes-256-gcm",
         "password": "MrValdez123",
         "network": "tcp,udp"
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
       },
       "streamSettings": {
         "network": "ws",
@@ -142,13 +178,17 @@
     },
     {
       "listen": "0.0.0.0",
-      "port": 8080,
+      "port": 8087,
       "protocol": "shadowsocks",
       "tag": "ss-hu",
       "settings": {
         "method": "aes-256-gcm",
         "password": "MrValdez123",
         "network": "tcp,udp"
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
       },
       "streamSettings": {
         "network": "httpupgrade",
